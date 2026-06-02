@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suministros Quimiblanc | Limpieza y Menaje Profesional en Málaga</title>
+<meta name="description" content="Distribuidor profesional de productos de limpieza, higiene y menaje para hostelería en Málaga. Stock permanente, distribución propia y asesoramiento técnico.">
+<meta name="keywords" content="suministros limpieza Málaga, productos higiene hostelería, menaje profesional Málaga, químicos limpieza HORECA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #2B3D8A;
+    --navy-dark: #1e2d6e;
+    --navy-light: #3d52b0;
+    --teal: #79BFA7;
+    --teal-light: #a0d4c1;
+    --teal-dark: #5a9e88;
+    --white: #FFFFFF;
+    --off-white: #F7F8FC;
+    --gray-100: #EEF0F8;
+    --gray-200: #D8DCF0;
+    --gray-500: #7A82A8;
+    --gray-700: #3D4466;
+    --text: #1a2040;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ===== ORGANIC CIRCLE MIXIN ===== */
+  .organic-frame {
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    overflow: hidden;
+  }
+  .organic-frame-2 {
+    border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+    overflow: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: auto;
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  nav.scrolled { 
+    padding: 10px 5%;
+    box-shadow: 0 4px 20px rgba(43,61,138,0.12); 
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; text-decoration: none;
+  }
+  .nav-logo-img {
+    height: 120px; width: auto; object-fit: contain;
+    margin: -35px 0;
+    transition: transform 0.3s;
+  }
+  .nav-logo:hover .nav-logo-img { transform: scale(1.04); }
+
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    position: relative;
+    text-decoration: none; color: var(--navy); font-size: 14px; font-weight: 600;
+    transition: color 0.3s; letter-spacing: 0.3px;
+    padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+    background: var(--teal); transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--teal-dark); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--navy); color: white !important;
+    padding: 10px 22px !important; border-radius: 50px;
+    font-weight: 600 !important; font-size: 13px !important;
+    transition: background 0.3s, transform 0.3s !important;
+    box-shadow: 0 4px 14px rgba(26,48,96,0.25);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--teal) !important; transform: translateY(-2px); color: white !important; }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: background 0.4s; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 45%, var(--navy-light) 100%);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(circle at 75% 30%, rgba(121,191,167,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(121,191,167,0.08) 0%, transparent 40%);
+  }
+
+  .hero-decor-circle {
+    position: absolute;
+    border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+    border: 1.5px solid rgba(121,191,167,0.25);
+    pointer-events: none;
+  }
+  .hero-decor-circle:nth-child(1) { width: 500px; height: 500px; top: -100px; right: -80px; }
+  .hero-decor-circle:nth-child(2) { width: 300px; height: 300px; top: 60px; right: 80px; border-color: rgba(255,255,255,0.1); }
+  .hero-decor-circle:nth-child(3) { width: 200px; height: 200px; bottom: 80px; left: 40%; border-color: rgba(121,191,167,0.15); }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; max-width: 1200px; margin: 0 auto; width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(121,191,167,0.2); border: 1px solid rgba(121,191,167,0.35);
+    color: var(--teal-light); padding: 7px 16px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 900; color: white;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+  .hero-title em { font-style: normal; color: var(--teal); }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.75); font-size: 17px; line-height: 1.7;
+    max-width: 480px; margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    background: var(--teal); color: white;
+    padding: 15px 32px; border-radius: 50px;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 6px 24px rgba(121,191,167,0.4);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(121,191,167,0.5); }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.1); color: white;
+    padding: 15px 28px; border-radius: 50px;
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+  .hero-phone {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 24px;
+    text-decoration: none; transition: color 0.2s, transform 0.2s;
+  }
+  .hero-phone:hover {
+    color: white; transform: translateY(-2px);
+  }
+  .hero-phone strong { color: white; font-size: 18px; transition: color 0.2s; }
+  .hero-phone:hover strong { color: var(--teal-light); }
+
+  .hero-visual { position: relative; display: flex; justify-content: center; }
+
+  .hero-img-wrap {
+    width: 380px; height: 420px;
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+    overflow: hidden;
+    border: 3px solid rgba(121,191,167,0.4);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 0 12px rgba(121,191,167,0.08);
+    background: linear-gradient(135deg, #1a2855, #2b3d8a);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-img-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5); text-align: center; padding: 32px;
+    gap: 16px;
+  }
+  .hero-img-placeholder svg { opacity: 0.4; }
+  .hero-img-placeholder span { font-size: 13px; opacity: 0.6; max-width: 200px; line-height: 1.4; }
+
+  .hero-stat-cards {
+    position: absolute;
+    display: flex; flex-direction: column; gap: 12px;
+    right: -20px; top: 50%; transform: translateY(-50%);
+  }
+  .hero-stat {
+    background: white; border-radius: 16px;
+    padding: 14px 18px; text-align: center; min-width: 110px;
+    box-shadow: 0 8px 30px rgba(43,61,138,0.2);
+    animation: float 3s ease-in-out infinite;
+  }
+  .hero-stat:nth-child(2) { animation-delay: 1s; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .hero-stat-label { font-size: 11px; color: var(--gray-500); font-weight: 500; margin-top: 3px; letter-spacing: 0.3px; }
+
+  /* ===== TRUSTED BY ===== */
+  .trusted {
+    background: var(--gray-100);
+    padding: 22px 5%; display: flex; align-items: center; gap: 40px;
+    overflow: hidden;
+  }
+  .trusted-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-500); font-weight: 600;
+    flex-shrink: 0; position: relative; z-index: 2;
+  }
+  .trusted-logos-wrapper {
+    flex: 1; overflow: hidden; position: relative;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+  .trusted-logos {
+    display: flex; width: max-content;
+    animation: scrollLogos 15s linear infinite;
+  }
+  .trusted-logos:hover { animation-play-state: paused; }
+  .logo-group {
+    display: flex; gap: 40px; padding-right: 40px; align-items: center;
+  }
+  @keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+  }
+  .trusted-logo-item {
+    font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700;
+    color: var(--gray-500); opacity: 0.6; letter-spacing: 0.5px;
+    white-space: nowrap; transition: opacity 0.3s; cursor: default;
+  }
+  .trusted-logo-item:hover { opacity: 1; }
+
+  /* ===== SECTION GENERIC ===== */
+  section { padding: 100px 5%; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--teal-dark); background: rgba(121,191,167,0.12);
+    padding: 6px 14px; border-radius: 50px; margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900;
+    color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+  }
+  .section-lead { font-size: 17px; color: var(--gray-500); line-height: 1.7; max-width: 560px; }
+  .section-header { margin-bottom: 60px; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-lead { margin: 0 auto; }
+
+  /* ===== CATEGORIES / CATALOG ===== */
+  #catalogo { background: var(--off-white); }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    max-width: 1400px; margin: 0 auto;
+  }
+
+  .cat-card {
+    border-radius: 24px; overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 16px rgba(43,61,138,0.07);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1.5px solid var(--gray-200);
+    position: relative;
+  }
+  .cat-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 24px 60px rgba(43,61,138,0.18); border-color: var(--teal-light); }
+
+  .cat-card-img {
+    height: 200px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .cat-card-img-accent {
+    position: absolute; width: 140px; height: 140px;
+    border-radius: 55% 45% 60% 40% / 50% 55% 45% 55%;
+    background: rgba(121,191,167,0.2);
+    top: -30px; right: -30px;
+  }
+  .cat-card-icon {
+    font-size: 52px; z-index: 1; position: relative;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  }
+  .cat-card-body { padding: 22px 24px 20px; }
+  .cat-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .cat-card-desc { font-size: 13px; color: var(--gray-500); line-height: 1.5; margin-bottom: 16px; }
+  .cat-card-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--teal-dark);
+    background: rgba(121,191,167,0.1); padding: 8px 16px; border-radius: 50px;
+    border: 1px solid rgba(121,191,167,0.3);
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none; cursor: pointer;
+  }
+  .cat-card-btn:hover { background: var(--teal); color: white; }
+
+  /* ===== MODAL DE CATEGORIA ===== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 2000;
+    background: rgba(10,16,50,0.75); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: white; border-radius: 28px;
+    max-width: 800px; width: 100%;
+    max-height: 88vh; overflow-y: auto;
+    padding: 40px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    animation: modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes modalIn { from{opacity:0;transform:scale(0.88) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+  .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--navy); }
+  .modal-close {
+    width: 36px; height: 36px; border-radius: 50%; background: var(--gray-100);
+    border: none; cursor: pointer; font-size: 18px; color: var(--gray-500);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--gray-200); }
+  .modal-filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 6px 14px; border-radius: 50px; border: 1px solid var(--gray-200);
+    background: white; color: var(--gray-500); font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn:hover { border-color: var(--teal); color: var(--teal-dark); }
+  .filter-btn.active { background: var(--teal); color: white; border-color: var(--teal); }
+  .filter-select {
+    padding: 8px 32px 8px 16px; border-radius: 50px; border: 1px solid var(--gray-200);
+    background: white; color: var(--navy); font-size: 14px; font-weight: 500;
+    cursor: pointer; display: block; width: auto; min-width: 200px;
+    appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB9%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat; background-position: right 1em top 50%; background-size: .65em auto;
+    margin: 0 auto;
+  }
+  .filter-select:focus { border-color: var(--teal); outline: none; box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15); }
+  .product-colors { display: flex; gap: 6px; justify-content: center; margin-top: 14px; }
+  .color-swatch { 
+    width: 20px; height: 20px; border-radius: 50%; cursor: pointer; 
+    border: 1px solid rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .color-swatch:hover { transform: scale(1.15); }
+  .color-swatch.active { box-shadow: 0 0 0 2px white, 0 0 0 3px var(--teal); border-color: transparent; }
+  .bag-types { display: flex; gap: 4px; justify-content: center; margin-top: 12px; }
+  .bag-type-btn {
+    padding: 4px 8px; border-radius: 6px; border: 1px solid var(--gray-200);
+    background: white; color: var(--gray-500); font-size: 10px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .bag-type-btn:hover { border-color: var(--teal); color: var(--teal-dark); }
+  .bag-type-btn.active { background: var(--teal); color: white; border-color: var(--teal); }
+  .modal-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+  .modal-product {
+    border-radius: 16px; border: 1.5px solid var(--gray-200);
+    overflow: hidden; text-align: center; padding: 20px 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .modal-product:hover { border-color: var(--teal); box-shadow: 0 4px 16px rgba(121,191,167,0.2); }
+  .modal-product-img-wrap {
+    position: relative;
+    height: 110px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px; background: white; border-radius: 12px; mix-blend-mode: multiply;
+  }
+  .modal-product-img {
+    max-width: 100%; max-height: 100%; object-fit: contain; transition: filter 0.3s;
+    mix-blend-mode: multiply;
+    filter: brightness(1.08) contrast(1.15);
+  }
+  .modal-product-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+  .modal-product-name { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+  
+  .modal-product.is-catalog {
+    padding: 0;
+    border: none;
+    box-shadow: 0 4px 20px rgba(43,61,138,0.1);
+    display: flex; flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .modal-product.is-catalog:hover {
+    box-shadow: 0 8px 30px rgba(43,61,138,0.2);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+  .modal-product.is-catalog .modal-product-img-wrap {
+    height: auto; aspect-ratio: 1 / 1.35;
+    margin-bottom: 0; border-radius: 0;
+    background: transparent; mix-blend-mode: normal;
+  }
+  .modal-product.is-catalog .modal-product-img {
+    width: 100%; height: 100%; object-fit: cover;
+    mix-blend-mode: normal;
+  }
+  .modal-product.is-catalog .modal-product-name {
+    padding: 16px; margin: 0; background: white;
+    flex-grow: 1; display: flex; align-items: center; justify-content: center;
+  }
+
+  .modal-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-whatsapp {
+    background: #25D366; color: white;
+    padding: 13px 26px; border-radius: 50px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+  }
+  .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-contact {
+    background: var(--navy); color: white;
+    padding: 13px 26px; border-radius: 50px;
+    font-size: 14px; font-weight: 600;
+    border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-contact:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+  /* ===== WHY QUIMIBLANC ===== */
+  #por-que { background: white; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+
+  .why-card {
+    padding: 40px 32px;
+    border-radius: 24px;
+    background: var(--off-white);
+    border: 1.5px solid var(--gray-200);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(43,61,138,0.04) 0%, rgba(121,191,167,0.06) 100%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .why-card:hover::before { opacity: 1; }
+  .why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(43,61,138,0.1); border-color: var(--teal-light); }
+
+  .why-icon-wrap {
+    width: 76px; height: 76px; margin: 0 auto 24px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    border-radius: 55% 45% 60% 40% / 45% 55% 40% 60%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 8px 24px rgba(43,61,138,0.2);
+  }
+  .why-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .why-desc { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonios { background: linear-gradient(160deg, var(--navy-dark), var(--navy)); }
+  #testimonios .section-title { color: white; }
+  #testimonios .section-tag { background: rgba(121,191,167,0.2); color: var(--teal-light); }
+  #testimonios .section-lead { color: rgba(255,255,255,0.65); }
+
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .testimonial-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 28px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .testimonial-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+  .testimonial-quote { font-size: 32px; color: var(--teal); line-height: 1; margin-bottom: 14px; font-family: 'Playfair Display', serif; }
+  .testimonial-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50% 45% 55% 45% / 50% 55% 45% 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 15px;
+  }
+  .testimonial-name { font-size: 14px; font-weight: 600; color: white; }
+  .testimonial-role { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* ===== CONTACT / FOOTER ===== */
+  #contacto { background: var(--off-white); padding: 100px 5% 0; }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    max-width: 1100px; margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-info { padding-bottom: 80px; }
+
+  .contact-detail { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px; }
+  .contact-detail-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    border-radius: 50% 45% 55% 45% / 50%;
+    background: var(--navy); color: white;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    box-shadow: 0 4px 14px rgba(43,61,138,0.25);
+  }
+  .contact-detail-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 4px; }
+  .contact-detail-value { font-size: 15px; font-weight: 600; color: var(--navy); }
+  .contact-detail-value a { color: var(--navy); text-decoration: none; }
+  .contact-detail-value a:hover { color: var(--teal-dark); }
+
+  .btn-call-big {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--navy); color: white;
+    padding: 18px 32px; border-radius: 50px;
+    text-decoration: none; margin-bottom: 16px;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 8px 28px rgba(43,61,138,0.3);
+    transition: background 0.2s, transform 0.2s;
+    width: fit-content;
+  }
+  .btn-call-big:hover { background: var(--navy-dark); transform: translateY(-2px); }
+  .btn-call-big-icon { font-size: 22px; animation: ring 2.5s infinite; }
+  @keyframes ring { 0%,100%{transform:rotate(0)} 10%{transform:rotate(-15deg)} 20%{transform:rotate(15deg)} 30%{transform:rotate(-10deg)} 40%{transform:rotate(0)} }
+
+  .map-embed {
+    border-radius: 20px; overflow: hidden;
+    border: 2px solid var(--gray-200);
+    height: 200px; background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray-500); font-size: 14px; margin-top: 24px;
+    flex-direction: column; gap: 8px;
+  }
+
+  /* ===== FORM ===== */
+  .contact-form { background: white; border-radius: 28px; padding: 40px; box-shadow: 0 8px 40px rgba(43,61,138,0.08); border: 1.5px solid var(--gray-200); }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+  .form-subtitle { font-size: 14px; color: var(--gray-500); margin-bottom: 28px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gray-700); margin-bottom: 8px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 13px 16px;
+    border: 1.5px solid var(--gray-200); border-radius: 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
+    background: var(--off-white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--teal); box-shadow: 0 0 0 3px rgba(121,191,167,0.15);
+    background: white;
+  }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-submit {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: white; border: none; border-radius: 50px;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 6px 20px rgba(43,61,138,0.3);
+    letter-spacing: 0.3px;
+  }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .form-success {
+    display: none; text-align: center; padding: 32px;
+    color: var(--teal-dark);
+  }
+  .form-success .success-icon { font-size: 56px; margin-bottom: 14px; }
+  .form-success h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+  .form-success p { font-size: 14px; color: var(--gray-500); }
+
+  /* ===== FOOTER BOTTOM ===== */
+  .footer-bottom {
+    background: var(--navy-dark); color: rgba(255,255,255,0.5);
+    padding: 28px 5%; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px; font-size: 13px;
+    margin-top: 60px;
+  }
+  .footer-bottom a { color: var(--teal-light); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: white; }
+  
+  .social-links { display: flex; gap: 12px; align-items: center; }
+  .social-links a { 
+    color: rgba(255,255,255,0.7) !important; 
+    display: flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+  }
+  .social-links a:hover { 
+    color: white !important; 
+    background: var(--teal); 
+    transform: translateY(-3px);
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px;
+    background: #25D366; color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; text-decoration: none;
+    box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+    animation: wabounce 3s infinite;
+    transition: transform 0.2s;
+  }
+  .float-wa:hover { transform: scale(1.1); }
+  @keyframes wabounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero-desc { margin: 0 auto 36px; }
+    .hero-actions { justify-content: center; }
+    .hero-phone { justify-content: center; }
+    .hero-visual { display: none; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 580px) {
+    .categories-grid { grid-template-columns: 1fr; }
+    .modal-products { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: white; flex-direction: column;
+    align-items: center; justify-content: center; gap: 32px;
+  }
+  .mobile-menu.active { display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700;
+    color: var(--navy); text-decoration: none; transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--teal-dark); }
+  .mobile-close {
+    position: absolute; top: 24px; right: 28px;
+    background: none; border: none; font-size: 28px; cursor: pointer; color: var(--navy);
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  /* ===== CUSTOM TOAST ALERTS ===== */
+  .toast-container {
+    position: fixed; top: 30px; right: 30px; z-index: 9999;
+    display: flex; flex-direction: column; gap: 12px; pointer-events: none;
+  }
+  .toast {
+    background: white; border-left: 4px solid var(--navy);
+    box-shadow: 0 10px 40px rgba(43,61,138,0.15);
+    padding: 16px 20px; border-radius: 12px;
+    display: flex; align-items: center; gap: 14px;
+    transform: translateX(120%); opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s;
+    min-width: 280px; max-width: 380px; pointer-events: auto;
+  }
+  .toast.show { transform: translateX(0); opacity: 1; }
+  .toast-icon { font-size: 22px; flex-shrink: 0; }
+  .toast-message { font-size: 14px; font-weight: 500; color: var(--navy); line-height: 1.4; }
+  .toast.error { border-left-color: #e74c3c; }
+  .toast.error .toast-icon { filter: drop-shadow(0 2px 4px rgba(231,76,60,0.3)); }
+  .toast.success { border-left-color: #2ecc71; }
+  
+  @media (max-width: 580px) {
+    .toast-container { top: 20px; right: 20px; left: 20px; align-items: center; }
+    .toast { min-width: auto; width: 100%; transform: translateY(-120%); }
+    .toast.show { transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<!-- TOAST CONTAINER -->
+<div id="toast-container" class="toast-container"></div>
+
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo">
+    <img src="assets/logo_quimiblanc.png" alt="Quimiblanc Limpieza Profesional" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#por-que">Nosotros</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#contacto" class="nav-cta">Pedir Presupuesto</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#catalogo" onclick="toggleMenu()">Catálogo</a>
+  <a href="#por-que" onclick="toggleMenu()">Nosotros</a>
+  <a href="#testimonios" onclick="toggleMenu()">Clientes</a>
+  <a href="#contacto" onclick="toggleMenu()" style="color:var(--teal-dark)">Pedir Presupuesto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-decor-circle"></div>
+  <div class="hero-decor-circle"></div>
+  <div class="hero-decor-circle"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Distribuidor en Málaga
+      </div>
+      <h1 class="hero-title">Tu aliado en limpieza y <em>menaje profesional</em> en Málaga</h1>
+      <p class="hero-desc">Productos de higiene, químicos y menaje para el sector HORECA. Stock permanente, distribución propia y asesoramiento técnico a medida.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn-primary">
+          <span>📦</span> Ver Catálogo
+        </a>
+        <a href="#contacto" class="btn-secondary">
+          Solicitar Presupuesto →
+        </a>
+      </div>
+      <a href="tel:+34622152620" class="hero-phone">
+        <span>📞</span>
+        <span>Llámanos ahora: <strong>+34 622 152 620</strong></span>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <video src="assets/d_ee_c_be_efc_e_df_a_f_db_d_b_d_a_cfd_mp_.mp4" poster="assets/hero_cleaning_supplies_1774296850918.png" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></video>
+      </div>
+      <div class="hero-stat-cards">
+        <div class="hero-stat">
+          <div class="hero-stat-num">+1000</div>
+          <div class="hero-stat-label">Productos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-label">Entrega Málaga</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<div class="trusted">
+  <span class="trusted-label">Confían en nosotros</span>
+  <div class="trusted-logos-wrapper">
+    <div class="trusted-logos">
+      <div class="logo-group">
+        <span class="trusted-logo-item">🏨 Hotel Sol</span>
+        <span class="trusted-logo-item">🍽️ Grupo Restauración</span>
+        <span class="trusted-logo-item">🏢 Limpieza Profesional Sur</span>
+        <span class="trusted-logo-item">☕ Cafeterías Costa</span>
+      </div>
+      <div class="logo-group" aria-hidden="true">
+        <span class="trusted-logo-item">🏨 Hotel Sol</span>
+        <span class="trusted-logo-item">🍽️ Grupo Restauración</span>
+        <span class="trusted-logo-item">🏢 Limpieza Profesional Sur</span>
+        <span class="trusted-logo-item">☕ Cafeterías Costa</span>
+      </div>
+      <div class="logo-group" aria-hidden="true">
+        <span class="trusted-logo-item">🏨 Hotel Sol</span>
+        <span class="trusted-logo-item">🍽️ Grupo Restauración</span>
+        <span class="trusted-logo-item">🏢 Limpieza Profesional Sur</span>
+        <span class="trusted-logo-item">☕ Cafeterías Costa</span>
+      </div>
+      <div class="logo-group" aria-hidden="true">
+        <span class="trusted-logo-item">🏨 Hotel Sol</span>
+        <span class="trusted-logo-item">🍽️ Grupo Restauración</span>
+        <span class="trusted-logo-item">🏢 Limpieza Profesional Sur</span>
+        <span class="trusted-logo-item">☕ Cafeterías Costa</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section id="catalogo">
+  <div class="section-header center">
+    <div class="section-tag">Nuestros Productos</div>
+    <h2 class="section-title">Catálogo Profesional</h2>
+    <p class="section-lead">Todo lo que necesita su negocio, en un solo proveedor de confianza en Málaga.</p>
+  </div>
+  <div class="categories-grid">
+    <div class="cat-card reveal" onclick="openModal('quimicos')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_quimicos_clean.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Químicos Profesionales</div>
+        <div class="cat-card-desc">Detergentes, desengrasantes, desinfectantes y jabones industriales para una limpieza profunda.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+    
+    <div class="cat-card reveal reveal-delay-1" onclick="openModal('celulosa')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_celulosa_1774467587112.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Celulosa</div>
+        <div class="cat-card-desc">Papel higiénico, servilletas y bobinas secamanos de alta capacidad.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-2" onclick="openModal('utiles')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_utiles_1774467600919.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Útiles de Limpieza</div>
+        <div class="cat-card-desc">Fregonas, mopas, bayetas de microfibra y cubos profesionales.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-3" onclick="openModal('uniformes')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_uniformes.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Uniformes</div>
+        <div class="cat-card-desc">Vestuario laboral, calzado de seguridad y ropa de trabajo para hostelería y limpieza.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal" onclick="openModal('dispensadores')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_dispensadores_1774467629457.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Dispensadores</div>
+        <div class="cat-card-desc">Aparatos murales para jabón, papel, gel hidroalcohólico y ambientadores.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-1" onclick="openModal('menaje')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_menaje_1774467643431.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Menaje</div>
+        <div class="cat-card-desc">Copas, cubertería, vajillas de porcelana y utensilios de cocina profesional.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-2" onclick="openModal('un_solo_uso')">
+      <div class="cat-card-img" style="background: url('assets/cat_v2_un_solo_uso_1774467660677.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Un Solo Uso</div>
+        <div class="cat-card-desc">Envases para comida para llevar, vasos de cartón y ecológicos.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-3" onclick="openModal('maquinaria')">
+      <div class="cat-card-img" style="background: url('assets/cat_maquinaria_cocina_v4.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Maquinaria de Hostelería</div>
+        <div class="cat-card-desc">Lavavajillas, freidoras, hornos industriales y equipamiento profesional de cocina.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal" onclick="openModal('mobiliario')">
+      <div class="cat-card-img" style="background: url('assets/cat_mobiliario.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Mobiliario</div>
+        <div class="cat-card-desc">Sillas, mesas y equipamiento de exterior e interior para hostelería.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-1" onclick="openModal('bolsas_basura')">
+      <div class="cat-card-img" style="background: url('assets/cat_bolsas.png') center/cover no-repeat;">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-title">Bolsas de Basura</div>
+        <div class="cat-card-desc">Bolsas industriales, de comunidad y para cubos de máxima resistencia.</div>
+        <span class="cat-card-btn">Ver productos →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY QUIMIBLANC -->
+<section id="por-que">
+  <div class="section-header center">
+    <div class="section-tag">Por qué elegirnos</div>
+    <h2 class="section-title">La diferencia Quimiblanc</h2>
+    <p class="section-lead">Más de 25 años siendo el proveedor de confianza para la hostelería y servicios de limpieza en Málaga.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon-wrap">🚚</div>
+      <div class="why-title">Distribución Propia en Málaga</div>
+      <div class="why-desc">Flota propia para entregas en toda la provincia en menos de 24 horas. Sin intermediarios, sin retrasos. Su negocio no puede esperar.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon-wrap">🎓</div>
+      <div class="why-title">Asesoramiento Técnico</div>
+      <div class="why-desc">Nuestro equipo le ayuda a elegir el producto adecuado para cada superficie y necesidad. Formación en uso de productos incluida.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon-wrap">📦</div>
+      <div class="why-title">Stock Permanente</div>
+      <div class="why-desc">Más de 1000 referencias disponibles en almacén. Garantizamos el suministro continuo para que nunca le falte de nada.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios">
+  <div class="section-header center">
+    <div class="section-tag">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-lead">La confianza de hoteles, restaurantes y empresas de limpieza en toda Málaga.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Llevamos un tiempo trabajando con Quimiblanc para el suministro de nuestra empresa y la experiencia ha sido inmejorable. </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AL</div>
+        <div>
+          <div class="testimonial-name">Adrián López López</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Lo mejor es su asesoramiento. Nos ayudaron a optimizar los productos que usamos en cocina y reducimos costes un 20% sin perder calidad.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">RG</div>
+        <div>
+          <div class="testimonial-name">Roberto González</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Gran empresa la cual no me ha fallado ni un día y un gran asesoramiento! Todo perfecto con el comercial Juan Antonio. Un placer trabajar con vosotros.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">W</div>
+        <div>
+          <div class="testimonial-name">Wismi</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-tag">Contacto</div>
+      <h2 class="section-title">Solicita tu<br>presupuesto</h2>
+      <p class="section-lead" style="margin-bottom:40px">Sin compromiso. Nuestro equipo le asesora y le prepara una oferta personalizada en 24 horas.</p>
+
+      <a href="tel:+34622152620" class="btn-call-big">
+        <span class="btn-call-big-icon">📞</span>
+        <div>
+          <div style="font-size:12px;opacity:0.75;font-weight:400;letter-spacing:1px">LLÁMANOS AHORA</div>
+          +34 622 152 620
+        </div>
+      </a>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">Dirección</div>
+          <div class="contact-detail-value">Polígono Industrial El Viso, Málaga</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div>
+          <div class="contact-detail-label">Horario</div>
+          <div class="contact-detail-value">Lunes–Viernes: 7:00 – 15:00</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value"><a href="mailto:info@quimiblanc.com">info@quimiblanc.com</a></div>
+        </div>
+      </div>
+
+      <div class="map-embed" style="padding: 0; display: block;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.369042561605!2d-4.488045723623039!3d36.71369717257017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f1ae1d61244b%3A0xe1113cdceb7f0eb2!2sSuministros%20Quimiblanc!5e0!3m2!1ses!2ses!4v1778926282872!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form" id="contactForm">
+        <div class="form-title">¿Hablamos?</div>
+        <p class="form-subtitle">Cuéntenos qué necesita y le contactamos en menos de 24 horas.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" id="fname" placeholder="Su nombre" required>
+          </div>
+          <div class="form-group">
+            <label>Empresa *</label>
+            <input type="text" id="fcompany" placeholder="Nombre del negocio" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono *</label>
+            <input type="tel" id="fphone" placeholder="+34 600 000 000" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="femail" placeholder="email@empresa.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tipo de negocio</label>
+          <select id="ftype">
+            <option value="">Seleccione...</option>
+            <option>Hotel / Hostal</option>
+            <option>Restaurante / Bar / Cafetería</option>
+            <option>Empresa de Limpieza</option>
+            <option>Catering / Eventos</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>¿Qué necesita?</label>
+          <textarea id="fmessage" placeholder="Describa brevemente qué productos o servicio necesita..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">
+          Enviar Solicitud de Presupuesto →
+        </button>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h4>¡Mensaje recibido!</h4>
+          <p>Le contactaremos en menos de 24 horas con su presupuesto personalizado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-bottom">
+  <div>© 2026 Suministros Quimiblanc. Todos los derechos reservados.</div>
+  <div>
+    <a href="#catalogo">Catálogo</a> · 
+    <a href="#contacto">Contacto</a> · 
+    <a href="aviso-legal.html" target="_blank">Aviso Legal</a> · 
+    <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a> ·
+    <a href="politica-cookies.html" target="_blank">Política de Cookies</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/quimiblanc/?hl=es" target="_blank" aria-label="Instagram">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61584877647973" target="_blank" aria-label="Facebook">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@quimiblanc" target="_blank" aria-label="TikTok">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 3.58-2.63 6.72-6.14 7.15-3.56.43-7.14-1.25-8.58-4.48-1.17-2.6-.45-5.8 1.71-7.7 2.06-1.83 5.17-2.31 7.64-1.26v4.06c-1.39-.73-3.14-.62-4.38.29-1.31.96-1.8 2.74-1.15 4.24.63 1.46 2.21 2.37 3.81 2.23 1.83-.17 3.23-1.67 3.32-3.5.06-4.57.03-9.14.04-13.71-.01-.01 0-.02 0-.03-.12-.04-.24-.07-.36-.1z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/34952000000?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20sus%20productos." 
+   class="float-wa" target="_blank" title="Contactar por WhatsApp" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 2C7.373 2 2 7.373 2 14c0 2.12.553 4.11 1.52 5.836L2 26l4.32-1.498A11.95 11.95 0 0014 26c6.627 0 12-5.373 12-12S20.627 2 14 2z" fill="white" fill-opacity="0.2"/>
+    <path d="M19.593 17.08c-.295-.147-1.745-.86-2.016-.958-.27-.098-.467-.147-.664.148-.196.295-.762.958-.934 1.155-.172.196-.344.221-.639.074-.295-.147-1.245-.459-2.372-1.463-.876-.781-1.468-1.746-1.64-2.041-.172-.295-.018-.454.13-.601.132-.132.295-.344.442-.516.148-.172.197-.295.295-.492.099-.197.05-.369-.025-.516-.074-.148-.664-1.6-.91-2.19-.24-.573-.483-.495-.664-.505l-.565-.01c-.197 0-.516.074-.787.369s-1.033 1.008-1.033 2.46 1.057 2.853 1.205 3.05c.147.196 2.08 3.176 5.04 4.455.704.304 1.254.486 1.683.622.707.225 1.35.194 1.858.118.567-.085 1.745-.713 1.991-1.402.246-.688.246-1.278.172-1.402-.074-.123-.27-.197-.565-.344z" fill="white"/>
+  </svg>
+</a>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box" id="modalBox">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">Categoría</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-filters" id="modalFilters"></div>
+    <div id="modalSearch" style="display:none; padding: 0 24px 16px;">
+      <input type="text" id="modalSearchInput" placeholder="Buscar producto (ej. Desengrasante)..." oninput="searchProducts(event)" style="width:100%; padding:12px 16px; border:1.5px solid var(--gray-200); border-radius:8px; font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition: border-color 0.2s;">
+    </div>
+    <div class="modal-products" id="modalProducts"></div>
+    <div class="modal-ctas">
+      <a id="modalWA" href="#" class="btn-whatsapp" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path d="M14 2C7.373 2 2 7.373 2 14c0 2.12.553 4.11 1.52 5.836L2 26l4.32-1.498A11.95 11.95 0 0014 26c6.627 0 12-5.373 12-12S20.627 2 14 2z" fill="white" fill-opacity="0.3"/><path d="M19.593 17.08c-.295-.147-1.745-.86-2.016-.958-.27-.098-.467-.147-.664.148-.196.295-.762.958-.934 1.155-.172.196-.344.221-.639.074-.295-.147-1.245-.459-2.372-1.463-.876-.781-1.468-1.746-1.64-2.041-.172-.295-.018-.454.13-.601.132-.132.295-.344.442-.516.148-.172.197-.295.295-.492.099-.197.05-.369-.025-.516-.074-.148-.664-1.6-.91-2.19-.24-.573-.483-.495-.664-.505l-.565-.01c-.197 0-.516.074-.787.369s-1.033 1.008-1.033 2.46 1.057 2.853 1.205 3.05c.147.196 2.08 3.176 5.04 4.455.704.304 1.254.486 1.683.622.707.225 1.35.194 1.858.118.567-.085 1.745-.713 1.991-1.402.246-.688.246-1.278.172-1.402-.074-.123-.27-.197-.565-.344z" fill="white"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <button class="btn-contact" onclick="closeModal(); document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+        📋 Pedir Presupuesto
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // NAV scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+  }
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Modal data
+  const categories = {
+    quimicos: {
+      title: 'Químicos Profesionales',
+      products: [
+        {img:'assets/prod_lavavajillas_1_5l.png', name:'Lavavajillas Manual', hasSizes: true, sizes: [
+          { label: '1.5L', img: 'assets/prod_lavavajillas_1_5l.png' },
+          { label: '5L', img: 'assets/prod_lavavajillas_5l.png' }
+        ]},
+        {img:'assets/prod_desengrasante_5l.png', name:'Desengrasante General', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_desengrasante_5l.png' }]},
+        {img:'assets/prod_detergente_aguas_duras_5l.png', name:'Detergente Aguas Duras', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_detergente_aguas_duras_5l.png' }]},
+        {img:'assets/prod_fregasuelos_5l.png', name:'Fregasuelos Efecto Repelente', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_fregasuelos_5l.png' }]},
+        {img:'assets/prod_spray_mopas_750ml.png', name:'Spray Mopas', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_spray_mopas_750ml.png' }]},
+        {img:'assets/prod_limpiacristales_750ml.png', name:'Limpiacristales', hasSizes: true, sizes: [
+          { label: '750ML', img: 'assets/prod_limpiacristales_750ml.png' },
+          { label: '5L', img: 'assets/prod_limpiacristales_5l.png' }
+        ]},
+        {img:'assets/prod_spray_bichos_750ml.png', name:'Spray Insectos', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_spray_bichos_750ml.png' }]},
+        {img:'assets/prod_limpiador_ambiental_5l.png', name:'Limpiador Ambiental', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_limpiador_ambiental_5l.png' }]},
+        {img:'assets/prod_ambientador_750ml.png', name:'Ambientador', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_ambientador_750ml.png' }]},
+        {img:'assets/prod_multiusos_5l.png', name:'Multiusos', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_multiusos_5l.png' }]},
+        {img:'assets/prod_piedra_pomez.png', name:'Piedra Aristina Pomez'},
+        {img:'assets/prod_lejia_amarilla_1l.png', name:'Lejía Amarilla', hasSizes: true, sizes: [
+          { label: '1L', img: 'assets/prod_lejia_amarilla_1l.png' },
+          { label: '2L', img: 'assets/prod_lejia_amarilla_2l.png' },
+          { label: '5L', img: 'assets/prod_lejia_amarilla_5l.png' }
+        ]},
+        {img:'assets/prod_lejia_continental_1l.png', name:'Lejía Continental', hasSizes: true, sizes: [
+          { label: '1L', img: 'assets/prod_lejia_continental_1l.png' },
+          { label: '2L', img: 'assets/prod_lejia_continental_2l.png' },
+          { label: '5L', img: 'assets/prod_lejia_continental_5l.png' }
+        ]},
+        {img:'assets/prod_desincrustante_1l.png', name:'Desincrustante General', hasSizes: true, sizes: [{ label: '1L', img: 'assets/prod_desincrustante_1l.png' }, { label: '5L', img: 'assets/prod_desincrustante_5l.png' }]},
+        {img:'assets/prod_abrillantador_inox_750ml.png', name:'Abrillantador Inox', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_abrillantador_inox_750ml.png' }]},
+        {img:'assets/prod_abrillantador_maquina_5l.png', name:'Abrillantador Maquina AD', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_abrillantador_maquina_5l.png' }]},
+        {img:'assets/prod_detergente_ropa_5l.png', name:'Detergente Líquido Ropa Plus', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_detergente_ropa_5l.png' }]},
+        {img:'assets/prod_suavizante_5l.png', name:'Suavizante Textil', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_suavizante_5l.png' }]},
+        {img:'assets/prod_spray_muebles_750ml.png', name:'Spray Limpia Muebles', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_spray_muebles_750ml.png' }]},
+        {img:'assets/prod_quitatintas_750ml.png', name:'Quitatintas', hasSizes: true, sizes: [{ label: '750ML', img: 'assets/prod_quitatintas_750ml.png' }]},
+        {img:'assets/prod_detergente_clorado_5l.png', name:'Detergente Clorado', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_detergente_clorado_5l.png' }]},
+        {img:'assets/prod_limpiador_clorado_5l.png', name:'Limpiador Clorado', hasSizes: true, sizes: [{ label: '5L', img: 'assets/prod_limpiador_clorado_5l.png' }]},
+        {img:'assets/prod_amoniaco_normal_1_5l.png', name:'Amoniaco Normal', hasSizes: true, sizes: [{ label: '1.5L', img: 'assets/prod_amoniaco_normal_1_5l.png' }]},
+        {img:'assets/prod_amoniaco_perfumado_1_5l.png', name:'Amoniaco Perfumado', hasSizes: true, sizes: [{ label: '1.5L', img: 'assets/prod_amoniaco_perfumado_1_5l.png' }]},
+        {img:'assets/prod_desengrasante_plancha_1l.png', name:'Desengrasante Plancha', hasSizes: true, sizes: [{ label: '1L', img: 'assets/prod_desengrasante_plancha_1l.png' }, { label: '5L', img: 'assets/prod_desengrasante_plancha_5l.png' }]}
+      ],
+      wa: 'Hola, me interesa información sobre sus productos Químicos Profesionales.'
+    },
+    celulosa: {
+      title: 'Celulosa',
+      filters: [
+        { id: 'bobina', label: 'Bobinas' },
+        { id: 'higienico', label: 'Higiénico' },
+        { id: 'toalla', label: 'Toallas Secamanos' },
+        { id: 'servilleta', label: 'Servilletas' }
+      ],
+      products: [
+        {img:'assets/bobina_industrial_1776532976761.png', name:'Bobina pasta lisa (Lucart)', type: 'bobina'},
+        {img:'assets/bobina_industrial_1776532976761.png', name:'Bobina laminada 800 y 500 gr (Lucart)', type: 'bobina'},
+        {img:'assets/higienico_industrial_1776533120338.png', name:'Higiénico laminado (Lucart)', type: 'higienico'},
+        {img:'assets/higienico_industrial_1776533120338.png', name:'Higiénico industrial (Lucart)', type: 'higienico'},
+        {img:'assets/higienico_industrial_1776533120338.png', name:'Higiénico doméstico (Lucart)', type: 'higienico'},
+        {img:'assets/higienico_industrial_1776533120338.png', name:'Higiénico Identity y L-ONE (Lucart)', type: 'higienico'},
+        {img:'assets/toalla_secamanos_1776532996894.png', name:'Toalla secamanos Z CE112 (Lucart)', type: 'toalla'},
+        {img:'assets/toalla_econatural.png', name:'Toalla secamanos EcoNatural (Lucart)', type: 'toalla'},
+        {img:'assets/prod_miniservice.png', name:'Miniservice', type: 'servilleta'},
+        {img:'assets/servilleta_blanca.png', name:'Servilleta 20x20 2C', type: 'servilleta', hasColors: true},
+        {img:'assets/servilleta_blanca.png', name:'Servilleta 30x33 2C', type: 'servilleta', hasColors: true},
+        {img:'assets/servilleta_blanca.png', name:'Servilleta 40x40 2C', type: 'servilleta', hasColors: true},
+        {img:'assets/servilleta_blanca.png', name:'Servilleta 32x40', type: 'servilleta', hasColors: true},
+        {img:'assets/prod_kanguro_blanco.png', name:'Kanguro y Minikanguro', hasSizes: true, sizes: [{ label: 'Blanco', img: 'assets/prod_kanguro_blanco.png' }, { label: 'Negro', img: 'assets/prod_kanguro_negro.png' }, { label: 'Kraft', img: 'assets/prod_kanguro_kraft.png' }, { label: 'Verde', img: 'assets/prod_kanguro_verde.png' }, { label: 'Azul', img: 'assets/prod_kanguro_azul.png' }], type: 'servilleta'}
+      ],
+      wa: 'Hola, me interesa información sobre sus productos de Celulosa.'
+    },
+    utiles: {
+      title: 'Útiles de Limpieza',
+      products: [
+        {img:'assets/prod_bayeta_azul.png', name:'Bayeta Microfibra', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_bayeta_azul.png' }, 
+          { label: 'Roja', img: 'assets/prod_bayeta_roja_1778931637246.png' }, 
+          { label: 'Verde', img: 'assets/prod_bayeta_verde_1778931650426.png' }, 
+          { label: 'Amarilla', img: 'assets/prod_bayeta_amarilla_1778931662931.png' }, 
+          { label: 'Gris', img: 'assets/prod_bayeta_gris_1778931675824.png' }
+        ]},
+        {img:'assets/prod_cepillo_azul.png', name:'Cepillo de Barrer Curva Básica', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_cepillo_azul.png' }, 
+          { label: 'Rojo', img: 'assets/prod_cepillo_rojo_1778931687551.png' }
+        ]},
+        {img:'assets/prod_fregona_tiras_fucsia.png', name:'Fregona Microfibra Tiras 180gr', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_fregona_tiras_azul_1778931700942.png' }, 
+          { label: 'Fucsia', img: 'assets/prod_fregona_tiras_fucsia.png' }
+        ]},
+        {img:'assets/prod_fregona_hilo_azul.png', name:'Fregona Microfibra Hilo', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_fregona_hilo_azul.png' }, 
+          { label: 'Azul/Blanca', img: 'assets/prod_fregona_hilo_azul_blanca_1778931716433.png' }
+        ]},
+        {img:'assets/prod_palo_alupro.png', name:'Palo Alu-Pro 1,5m'},
+        {img:'assets/prod_plumero_avestruz.png', name:'Plumero Avestruz Corto'},
+        {img:'assets/prod_mopa_algodon_1779020988518.png', name:'Recambio Mopa Algodón', hasSizes: true, sizes: [
+          { label: '75cm' }, { label: '100cm' }
+        ]},
+        {img:'assets/prod_estropajo_inox_1778931989953.png', name:'Estropajo Inox 40gr'},
+        {img:'assets/prod_recogedor_azul_1779021001433.png', name:'Recogedor con Regleta', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_recogedor_azul_1779021001433.png' }, 
+          { label: 'Rojo', img: 'assets/prod_recogedor_rojo_1778931731588.png' }
+        ]},
+        {img:'assets/prod_rollo_estropajo_1778932014441.png', name:'Rollo Estropajo Fibra 6m', hasSizes: true, sizes: [
+          { label: 'Verde', img: 'assets/prod_rollo_estropajo_1778932014441.png' }, 
+          { label: 'Blanco', img: 'assets/prod_rollo_estropajo_blanco_1778931744078.png' }
+        ]},
+        {img:'assets/prod_cubo_escurridor_azul_1779020797359.png', name:'Cubo Fregona con Escurridor 12L', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_cubo_escurridor_azul_1779020797359.png' }, { label: 'Rojo', img: 'assets/prod_cubo_escurridor_rojo_1779020809640.png' }, { label: 'Negro', img: 'assets/prod_cubo_escurridor_negro_1779020821395.png' }
+        ]},
+        {img:'assets/prod_cubo_escurridor_azul_1779020797359.png', name:'Cubo Fregona con Escurridor 13L', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_cubo_escurridor_azul_1779020797359.png' }, { label: 'Rojo', img: 'assets/prod_cubo_escurridor_rojo_1779020809640.png' }, { label: 'Negro', img: 'assets/prod_cubo_escurridor_negro_1779020821395.png' }
+        ]},
+        {img:'assets/prod_cubo_escurridor_azul_1779020797359.png', name:'Cubo Fregona con Escurridor 15L', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_cubo_escurridor_azul_1779020797359.png' }, { label: 'Rojo', img: 'assets/prod_cubo_escurridor_rojo_1779020809640.png' }, { label: 'Negro', img: 'assets/prod_cubo_escurridor_negro_1779020821395.png' }
+        ]},
+        {img:'assets/prod_cubo_plastico_azul_1779020835701.png', name:'Cubo Plástico Azul', hasSizes: true, sizes: [
+          { label: '6L', img: 'assets/prod_cubo_plastico_azul_1779020835701.png' }, { label: '8L', img: 'assets/prod_cubo_plastico_azul_1779020835701.png' }, { label: '12L', img: 'assets/prod_cubo_plastico_azul_1779020835701.png' }
+        ]},
+        {img:'assets/prod_empunadura_1779020848455.png', name:'Empuñadura Limpiacristales'},
+        {img:'assets/prod_escobillero_negro_1779020860864.png', name:'Escobillero', hasSizes: true, sizes: [
+          { label: 'Negro', img: 'assets/prod_escobillero_negro_1779020860864.png' }, { label: 'Blanco', img: 'assets/prod_escobillero_blanco_1779020871121.png' }
+        ]},
+        {img:'assets/prod_escobilla_negra_1779020886665.png', name:'Escobilla WC', hasSizes: true, sizes: [
+          { label: 'Negro', img: 'assets/prod_escobilla_negra_1779020886665.png' }, { label: 'Blanco', img: 'assets/prod_escobilla_blanca_1779020898292.png' }
+        ]},
+        {img:'assets/prod_rolldrap_azul_1779020918569.png', name:'Rolldrap', hasSizes: true, sizes: [
+          { label: 'Azul', img: 'assets/prod_rolldrap_azul_1779020918569.png' }, { label: 'Blanco', img: 'assets/prod_rolldrap_blanco_1779020930446.png' }
+        ]},
+        {img:'assets/prod_haragan_1779020941323.png', name:'Haragán Metálico', hasSizes: true, sizes: [
+          { label: '45cm', img: 'assets/prod_haragan_1779020941323.png' }, { label: '65cm', img: 'assets/prod_haragan_1779020941323.png' }, { label: '75cm', img: 'assets/prod_haragan_1779020941323.png' }
+        ]},
+        {img:'assets/prod_mopa_bastidor_1779020953217.png', name:'Mopa + Bastidor 45cm'},
+        {img:'assets/prod_pano_blanco_1779020964020.png', name:'Paño de Cocina 55x55', hasSizes: true, sizes: [
+          { label: 'Blanco', img: 'assets/prod_pano_blanco_1779020964020.png' }, { label: 'Azul', img: 'assets/prod_pano_azul_1779020976756.png' }
+        ]}
+      ],
+      wa: 'Hola, me interesa información sobre Útiles de Limpieza.'
+    },
+    uniformes: {
+      title: 'Uniformes',
+      products: [
+        {img:'assets/catalogo_garys_skechers.png', name:"GARY'S SKECHERS", url:'https://drive.google.com/file/d/11r957gsBBjp_I_K6MDciEc4dBafAF5mG/view?usp=sharing'},
+        {img:'assets/catalogo_garys_horeca.png', name:"GARY'S HORECA", url:'https://drive.google.com/file/d/1Nxsue8nGqLKvAyTGdf0Qz8zoXHeIbi0C/view?usp=sharing'},
+        {img:'assets/catalogo_garys.png', name:"GARY'S HEALTH & WELLNESS", url:'https://drive.google.com/file/d/1yOleJ1doBNvujwURiAq-4fP0amrnOcpE/view?usp=drive_link'},
+        {img:'assets/catalogo_workteam.png', name:'WORKTEAM', url:'https://drive.google.com/file/d/1KIN8o-1v0ozvcq23YzO0_ui0Tjdsy39Y/view?usp=drive_link'},
+        {img:'assets/catalogo_dian.png', name:'DIAN', url:'https://drive.google.com/file/d/1yTU_R2Lt8WbgNGL7ZTi1Y6a6X4fvXvpx/view?usp=sharing'},
+        {icon:'👕', name:'MONZA HOSTELERÍA', url:'https://drive.google.com/file/d/1qCIUH7Ksr8QuhpemDjPQWPQ3awf4i8Et/view?usp=drive_link'},
+        {icon:'👕', name:'MONZA INDUSTRIA', url:'https://drive.google.com/file/d/1BQ4FEFQNxv7KgHia3IZOATYhp9kgmjwg/view?usp=drive_link'},
+        {icon:'👕', name:'MONZA SANITARIO', url:'https://drive.google.com/file/d/1MiZmFDi-e6YhxJnYK7zb7LuYOCQEBn6_/view?usp=drive_link'},
+      ],
+      wa: 'Hola, me interesa información sobre sus Uniformes.'
+    },
+    dispensadores: {
+      title: 'Dispensadores',
+      products: [
+        {img:'assets/catalogo_jami.png', name:'JAMI', url:'https://drive.google.com/file/d/1-wvO1sInjdLY9KcKgSe6htRxaHZxe9Sj/view?usp=sharing'},
+        {img:'assets/catalogo_jofel.png', name:'JOFEL', url:'https://drive.google.com/file/d/1asypxztIRSMSy8tkNe3HRdFLXsMvnJGB/view?usp=sharing'},
+      ],
+      wa: 'Hola, me interesa información sobre sus Dispensadores.'
+    },
+    menaje: {
+      title: 'Menaje',
+      products: [
+        {img:'assets/catalogo_utilnox.png', name:'UTILNOX', url:'https://drive.google.com/file/d/1Oyax8IIaCuTIpnlSKOJzWokBD7Ls2rRC/view?usp=drive_link'},
+        {img:'assets/catalogo_purasangre.png', name:'PURA SANGRE', url:'https://drive.google.com/file/d/1F7f1vHo3OZvZaCBU18B9NkTLqv5hdKTH/view?usp=drive_link'},
+        {img:'assets/catalogo_bonna.png', name:'BONNA', url:'https://drive.google.com/file/d/1RzM3WCnshUrzq6DuTOX0rEpihA14hhJB/view?usp=drive_link'},
+        {img:'assets/catalogo_viejovalle.png', name:'VIEJO VALLE', url:'https://drive.google.com/file/d/1-vkHQCzLb2yfVLQej4Uz9VtcdYBfDzFA/view?usp=drive_link'},
+        {img:'assets/catalogo_tognana.png', name:'TOGNANA', url:'https://drive.google.com/file/d/1SkAYCI0txkvSycpGJeLbOLHYB9zt0Haw/view?usp=drive_link'},
+        {img:'assets/catalogo_irabia.png', name:'IRABIA', url:'https://drive.google.com/file/d/1QmfOl_301paN0QNPCATohBxXvBy8ag4u/view?usp=drive_link'},
+        {img:'assets/catalogo_fuentes_guerra.png', name:'FUENTES GUERRA', url:'https://drive.google.com/file/d/19K2zYjVdTs7j0fqoypYjDrCl92ZMBPGg/view?usp=drive_link'},
+        {img:'assets/catalogo_eurodra.png', name:'EURODRA', url:'https://drive.google.com/file/d/19K2zYjVdTs7j0fqoypYjDrCl92ZMBPGg/view?usp=drive_link'},
+        {img:'assets/catalogo_alar.png', name:'ALAR', url:'https://drive.google.com/file/d/17GVB8foV_nGpwN7_7x7nBWZuOcUbOKmG/view?usp=sharing'},
+        {img:'assets/catalogo_3claveles.png', name:'3 CLAVELES', url:'https://drive.google.com/file/d/10od3rH4jIBOaW0j1DvNG2Z8Syzemc__i/view?usp=sharing'},
+        
+      ],
+      wa: 'Hola, me interesa información sobre su Menaje.'
+    },
+    un_solo_uso: {
+      title: 'Un Solo Uso',
+      filters: [
+        { id: 'cocina', label: 'U.S.U COCINA' },
+        { id: 'takeaway', label: 'TAKE AWAY' }
+      ],
+      products: [
+        {img:'assets/prod_caja_pizza.png', name:'Caja Pizza 30x30', type: 'takeaway'},
+        {img:'assets/prod_envase_pollo.png', name:'Envase Pollo', hasSizes: true, sizes: [{ label: '1/2 Pollo' }, { label: 'Pollo Entero' }], type: 'takeaway'},
+        {img:'assets/prod_tapa_pollo.png', name:'Tapa Envase Pollo', type: 'takeaway'},
+        {img:'assets/prod_tapa_perf_pollo.png', name:'Tapa Perforada Envase Pollo', type: 'takeaway'},
+        {img:'assets/prod_palillos_chinos.png', name:'Palillos Chinos', type: 'takeaway'},
+        {img:'assets/prod_picks_golf.png', name:'Picks Golf', hasSizes: true, sizes: [{ label: '9 Cm' }, { label: '12 Cm' }, { label: '15 Cm' }, { label: '24 Cm' }], type: 'takeaway'},
+        {img:'assets/prod_sorbete_bambu.png', name:'Sorbete Bambú Enfundado 200x6.3 mm', type: 'takeaway'},
+        {img:'assets/prod_picks_lazo.png', name:'Picks Lazo', hasSizes: true, sizes: [{ label: '9 Cm' }, { label: '15 Cm' }, { label: '21 Cm' }], type: 'takeaway'},
+        {img:'assets/prod_envase_alu_chino.png', name:'Envase Aluminio Chino C/Tapa', hasSizes: true, sizes: [{ label: 'Pequeño', img: 'assets/prod_envase_alu_chino.png' }, { label: 'Grande', img: 'assets/prod_envase_alu_chino_grande.png' }], type: 'takeaway'},
+        {img:'assets/prod_envase_alu_plumcake.png', name:'Envase Aluminio Plum Cake', type: 'takeaway'},
+        {img:'assets/prod_barqueta_madera.png', name:'Barqueta Madera', type: 'takeaway'},
+        {img:'assets/prod_tenedor_plastico.png', name:'Tenedor Plástico', hasSizes: true, sizes: [{ label: 'Blanco', img: 'assets/prod_tenedor_plastico.png' }, { label: 'Negro', img: 'assets/prod_tenedor_plastico_negro.png' }], type: 'takeaway'},
+        {img:'assets/prod_cuchara_plastico.png', name:'Cuchara Plástico', hasSizes: true, sizes: [{ label: 'Blanco', img: 'assets/prod_cuchara_plastico.png' }, { label: 'Negro', img: 'assets/prod_cuchara_plastico_negro.png' }], type: 'takeaway'},
+        {img:'assets/prod_cuchillo_plastico.png', name:'Cuchillo Plástico', hasSizes: true, sizes: [{ label: 'Blanco', img: 'assets/prod_cuchillo_plastico.png' }, { label: 'Negro', img: 'assets/prod_cuchillo_plastico_negro.png' }], type: 'takeaway'},
+        {img:'assets/prod_set_cubiertos.png', name:'Set Cubiertos c/ servilleta', type: 'takeaway'},
+        {img:'assets/prod_envase_sushi.png', name:'Envase Sushi', type: 'takeaway'},
+        {img:'assets/prod_envase_ops.png', name:'Envase OPS', hasSizes: true, sizes: [{ label: '250cc' }, { label: '500cc' }, { label: '1000cc' }], type: 'takeaway'},
+        {img:'assets/prod_ensaladera_kraft.png', name:'Ensaladera Kraft C/Tapa', hasSizes: true, sizes: [{ label: '500 ml' }, { label: '750 ml' }, { label: '1000 ml' }, { label: '1300 ml' }], type: 'takeaway'},
+        {img:'assets/prod_vaso_carton_cafe.png', name:'Vaso Cartón Café (c/ Tapa)', hasSizes: true, sizes: [{ label: '4oz' }, { label: '7oz' }, { label: '8oz' }, { label: '12oz' }], type: 'takeaway'},
+        {img:'assets/prod_bandeja_porta_vasos.png', name:'Bandeja Porta Vasos', hasSizes: true, sizes: [{ label: '2 Vasos' }, { label: '4 Vasos' }], type: 'takeaway'},
+        {img:'assets/prod_faja_carton_kraft.png', name:'Faja Cartón Kraft', hasSizes: true, sizes: [{ label: '8oz' }, { label: '12oz' }], type: 'takeaway'},
+        {img:'assets/prod_film_industrial.png', name:'Film Industrial', hasSizes: true, sizes: [{ label: '30 Cm' }, { label: '45 Cm' }], type: 'cocina'},
+        {img:'assets/prod_aluminio_prof.png', name:'Aluminio Profesional', hasSizes: true, sizes: [{ label: '30 Cm (11μ)' }, { label: '40 Cm (13μ)' }], type: 'cocina'},
+        {img:'assets/prod_bolsas_vacio.png', name:'Bolsas Vacío', hasSizes: true, sizes: [{ label: '150x200 mm' }, { label: '200x300 mm' }, { label: '300x400 mm' }], type: 'cocina'},
+        {img:'assets/prod_papel_horno.png', name:'Papel Horno', hasSizes: true, sizes: [{ label: 'Hojas 40x60' }, { label: 'Rollo 30x100 Mts' }], type: 'cocina'}
+      ],
+      wa: 'Hola, me interesa información sobre sus productos de Un Solo Uso.'
+    },
+    maquinaria: {
+      title: 'Maquinaria de Hostelería',
+      products: [
+        {img:'assets/catalogo_lacor.png', name:'LACOR', url:'https://drive.google.com/file/d/1D3T4_lPOZl0VhwBQb-SNjAj5fKq4iYZu/view?usp=sharing'},
+        {img:'assets/catalogo_pujadas.png', name:'PUJADAS - VOLLRATH', url:'https://drive.google.com/file/d/17Q1Wom-vcsDZENc29dhqqWPBxfqHBMeI/view?usp=sharing'},
+        {icon:'🍽️',name:'Lavavajillas y lavavasos industriales'},
+        {icon:'🍟',name:'Freidoras profesionales'},
+        {icon:'🌪️',name:'Batidoras y amasadoras'},
+        {icon:'🍳',name:'Sartenes, planchas y marmitas'},
+        {icon:'🍕',name:'Hornos industriales'},
+        {icon:'❄️',name:'Armarios frigoríficos y congeladores'},
+        {icon:'🔪',name:'Cortadoras de fiambre'},
+        {icon:'☕',name:'Cafeteras y molinos'}
+      ],
+      wa: 'Hola, me interesa información sobre su Maquinaria de Hostelería.'
+    },
+    mobiliario: {
+      title: 'Mobiliario',
+      products: [
+        {img:'assets/catalogo_3gresins.png', name:'3G RESINS', url:'https://drive.google.com/file/d/1Ym_GsQcl5K_w2qzHuq4f0mq0Hmj8omJT/view?usp=sharing'},
+        {img:'assets/catalogo_contractpro.png', name:'CONTRACTPRO', url:'https://drive.google.com/file/d/1vWp6svCfC6YwrsczlYhPvjthVC2Zel_q/view?usp=sharing'},
+        {img:'assets/catalogo_siesta_contract.png', name:'SIESTA CONTRACT', url:'https://drive.google.com/file/d/1vWp6svCfC6YwrsczlYhPvjthVC2Zel_q/view?usp=sharing'},
+        {img:'assets/catalogo_siesta.png', name:'SIESTA EXCLUSIVE', url:'https://drive.google.com/file/d/1evtUcDWB4DpjLweXFJRF5bfOc3uW_6_Z/view?usp=sharing'},
+        {img:'assets/catalogo_garbar.png', name:'GARBAR', url:'https://drive.google.com/file/d/1c_vr9zGV6shgRZwqxVLNG9TbDCvgfED5/view?usp=sharing'},
+        {img:'assets/catalogo_resol.png', name:'RESOL', url:'https://drive.google.com/file/d/1DeQsuiR04X2S4FugI6hgLH1rvu_-EMK7/view?usp=sharing'},
+        {icon:'🪑',name:'Sillas de interior y exterior'},
+        {icon:'🪵',name:'Mesas altas y bajas'},
+        {icon:'⛱️',name:'Parasoles y sombrillas'},
+        {icon:'🛏️',name:'Tumbonas y mobiliario de piscina'},
+        {icon:'🛋️',name:'Sofás y sillones chill out'},
+        {icon:'🪄',name:'Separadores de terraza'},
+      ],
+      wa: 'Hola, me interesa información sobre su Mobiliario.'
+    },
+    bolsas_basura: {
+      title: 'Bolsas de Basura',
+      filters: [
+        { id: '115x150', label: '115X150' },
+        { id: '110x120', label: '110X120' },
+        { id: '95x135', label: '95X135' },
+        { id: '90x120', label: '90X120' },
+        { id: '90x115', label: '90X115' },
+        { id: '90x110', label: '90X110' },
+        { id: '85x105', label: '85X105' },
+        { id: '85x100', label: '85X100' },
+        { id: '80x100', label: '80X100' },
+        { id: '70x90', label: '70X90' },
+        { id: '65x100', label: '65X100' },
+        { id: '60x90', label: '60X90' },
+        { id: '55x60', label: '55X60' },
+        { id: '54x60', label: '54X60' },
+        { id: '52x60', label: '52X60' },
+        { id: '50x55', label: '50X55' },
+        { id: '45x47', label: '45X47' },
+        { id: '39x40', label: '39X40' },
+        { id: '35x40', label: '35X40' },
+        { id: 'autocierre', label: 'Autocierre' }
+      ],
+      products: [
+        {img:'assets/bolsa_1.png', name:'115X150 R10 C/20', type: '115x150', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'90X115 R10 C/25', type: '90x115', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'70X90 R20 C/35', type: '70x90', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'54X60 R25 C/50', type: '54x60', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'110X120 R10 C/15', type: '110x120', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'50X55 R25 C/60', type: '50x55', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'52X60 R25 C/60', type: '52x60', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'95X135 R10 C/25', type: '95x135', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'35X40 R100 C/45', type: '35x40', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'60X90 R20 C/40', type: '60x90', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'85X100 R10 C/40', type: '85x100', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'80X100 R10 C/40', type: '80x100', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'85X105 R10 C/40', type: '85x105', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'90X110 R10 C/25', type: '90x110', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'90X120 R10 C/25', type: '90x120', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'65X100 R10 C/30', type: '65x100', hasBagColors:true, hasBagTypes:true},
+        {img:'assets/bolsa_1.png', name:'39X40 AUTOCIERRE R30 C/60', type: 'autocierre', hasBagColors:true},
+        {img:'assets/bolsa_1.png', name:'45X47 AUTOCIERRE R40 C/36', type: 'autocierre', hasBagColors:true},
+        {img:'assets/bolsa_1.png', name:'55X60 AUTOCIERRE R15 C/56', type: 'autocierre', hasBagColors:true}
+      ],
+      wa: 'Hola, me interesa información sobre sus Bolsas de Basura.'
+    }
+  };
+
+  function selectBagType(e) {
+    if (e && e.currentTarget) {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = e.currentTarget.parentElement;
+      parent.querySelectorAll('.bag-type-btn').forEach(btn => btn.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    }
+  }
+
+  function changeColor(pIndex, color, e) {
+    const overlay = document.getElementById(`overlay-${pIndex}`);
+    const img = document.getElementById(`img-${pIndex}`);
+    
+    if (overlay) {
+      const bagColors = {
+        black: '#000000',
+        white: '#e0e0e0',
+        red: '#d32a2a',
+        green: '#2ad366',
+        blue: '#2a75d3',
+        yellow: '#f1c40f',
+        transparent: '#e0e0e080'
+      };
+      overlay.style.backgroundColor = bagColors[color];
+    } else if (img) {
+      if (img.src.includes('servilleta')) {
+        const colorFiles = {
+          white: 'assets/servilleta_blanca.png',
+          blue: 'assets/servilleta_azul.png',
+          red: 'assets/servilleta_roja.png',
+          green: 'assets/servilleta_verde.png',
+          black: 'assets/servilleta_negra.png'
+        };
+        if (colorFiles[color]) img.src = colorFiles[color];
+        img.style.filter = 'none';
+      } else {
+        const filters = {
+          white: 'none',
+          blue: 'sepia(1) hue-rotate(190deg) saturate(4) brightness(0.85)',
+          red: 'sepia(1) hue-rotate(330deg) saturate(6) brightness(0.85)',
+          green: 'sepia(1) hue-rotate(90deg) saturate(3) brightness(0.85)',
+          yellow: 'sepia(1) hue-rotate(35deg) saturate(5) brightness(0.95)',
+          transparent: 'grayscale(1) opacity(0.5) brightness(1.2)',
+          black: 'grayscale(1) brightness(0.3)'
+        };
+        img.style.filter = filters[color];
+      }
+    }
+    
+    if (e && e.currentTarget) {
+      const parent = e.currentTarget.parentElement;
+      parent.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    }
+  }
+
+  function changeSize(pIndex, imgSrc, e) {
+    const img = document.getElementById(`img-${pIndex}`);
+    if (img && imgSrc && imgSrc !== 'undefined') img.src = imgSrc;
+    
+    if (e && e.currentTarget) {
+      const parent = e.currentTarget.parentElement;
+      parent.querySelectorAll('.size-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = '#f8f9fa';
+        btn.style.color = 'var(--navy)';
+      });
+      e.currentTarget.classList.add('active');
+      e.currentTarget.style.background = 'var(--navy)';
+      e.currentTarget.style.color = 'white';
+    }
+  }
+
+  function renderProducts(products) {
+    document.getElementById('modalProducts').innerHTML = products.map((p, index) => {
+      let imageHtml = '';
+      
+      let bagColorKey = 'black';
+      let bagColorHex = '#000000';
+      if (p.hasBagColors) {
+        if (index === 0) {
+          bagColorKey = 'black';
+          bagColorHex = '#000000';
+        } else {
+          const colors = ['black', 'white', 'red', 'green', 'blue', 'yellow', 'transparent'];
+          const hexes = {
+            black: '#000000',
+            white: '#e0e0e0',
+            red: '#d32a2a',
+            green: '#2ad366',
+            blue: '#2a75d3',
+            yellow: '#f1c40f',
+            transparent: '#e0e0e080'
+          };
+          bagColorKey = colors[Math.floor(Math.random() * colors.length)];
+          bagColorHex = hexes[bagColorKey];
+        }
+      }
+
+      if (p.hasBagColors && p.img) {
+        imageHtml = `
+          <img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img">
+          <div id="overlay-${index}" style="position:absolute; top:0; left:0; right:0; bottom:0; background-color:${bagColorHex}; mix-blend-mode: screen; pointer-events: none; transition: background-color 0.3s ease;"></div>
+        `;
+      } else if (p.img) {
+        imageHtml = `<img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img">`;
+      } else {
+        imageHtml = `<span class="modal-product-icon">${p.icon}</span>`;
+      }
+        
+      let colorsHtml = '';
+      if (p.hasColors) {
+        colorsHtml = `
+          <div class="product-colors">
+            <div class="color-swatch active" style="background:#f8f9fa" onclick="changeColor(${index}, 'white', event)" title="Blanco"></div>
+            <div class="color-swatch" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+            <div class="color-swatch" style="background:#d32a2a" onclick="changeColor(${index}, 'red', event)" title="Rojo"></div>
+            <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
+            <div class="color-swatch" style="background:#2b2b2b" onclick="changeColor(${index}, 'black', event)" title="Negro"></div>
+          </div>`;
+      } else if (p.hasBagColors) {
+        colorsHtml = `
+          <div class="product-colors">
+            <div class="color-swatch ${bagColorKey==='black'?'active':''}" style="background:#2b2b2b" onclick="changeColor(${index}, 'black', event)" title="Negro"></div>
+            <div class="color-swatch ${bagColorKey==='white'?'active':''}" style="background:#f8f9fa" onclick="changeColor(${index}, 'white', event)" title="Blanco"></div>
+            <div class="color-swatch ${bagColorKey==='red'?'active':''}" style="background:#d32a2a" onclick="changeColor(${index}, 'red', event)" title="Rojo"></div>
+            <div class="color-swatch ${bagColorKey==='green'?'active':''}" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
+            <div class="color-swatch ${bagColorKey==='blue'?'active':''}" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+            <div class="color-swatch ${bagColorKey==='yellow'?'active':''}" style="background:#f1c40f" onclick="changeColor(${index}, 'yellow', event)" title="Amarillo"></div>
+            <div class="color-swatch ${bagColorKey==='transparent'?'active':''}" style="background:rgba(255,255,255,0.5); border:1px dashed #ccc;" onclick="changeColor(${index}, 'transparent', event)" title="Transparente"></div>
+          </div>`;
+      }
+
+      let typesHtml = '';
+      if (p.hasBagTypes) {
+        typesHtml = `
+          <div class="bag-types">
+            <button class="bag-type-btn active" onclick="selectBagType(event)">Estándar</button>
+            <button class="bag-type-btn" onclick="selectBagType(event)">Fuerte</button>
+            <button class="bag-type-btn" onclick="selectBagType(event)">Extrafuerte</button>
+          </div>
+        `;
+      }
+
+      let sizesHtml = '';
+      if (p.hasSizes && p.sizes) {
+        sizesHtml = `
+          <div class="product-sizes" style="display:flex; gap:8px; margin-top:12px; justify-content:center;">
+            ${p.sizes.map((s, i) => `
+              <button class="size-btn ${i===0?'active':''}" 
+                      style="padding:6px 10px; font-size:12px; border:1px solid var(--gray-200); background:${i===0?'var(--navy)':'#f8f9fa'}; color:${i===0?'white':'var(--navy)'}; border-radius:6px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s;"
+                      onclick="changeSize(${index}, '${s.img}', event)">
+                ${s.label}
+              </button>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      let productInnerHtml = `
+        <div class="modal-product-img-wrap">
+          ${imageHtml}
+        </div>
+        <div class="modal-product-name">${p.name}</div>
+        ${colorsHtml}
+        ${typesHtml}
+        ${sizesHtml}
+      `;
+
+      if (p.url) {
+        return `<a href="${p.url}" target="_blank" class="modal-product is-catalog" style="text-decoration:none; display:flex;">${productInnerHtml}</a>`;
+      } else {
+        return `<div class="modal-product">${productInnerHtml}</div>`;
+      }
+    }).join('');
+  }
+
+  function searchProducts(e) {
+    const term = e.target.value.toLowerCase();
+    const data = categories[window.currentModalCat];
+    if (!data) return;
+    const filtered = data.products.filter(p => p.name.toLowerCase().includes(term));
+    renderProducts(filtered);
+  }
+
+  function filterProducts(cat, type, e) {
+    const data = categories[cat];
+    let filtered = data.products;
+    if (type !== 'all') {
+      filtered = data.products.filter(p => p.type === type);
+    }
+    renderProducts(filtered);
+
+    if (e && e.currentTarget) {
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(btn => btn.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    }
+  }
+
+  function openModal(cat) {
+    const data = categories[cat];
+    document.getElementById('modalTitle').textContent = data.title;
+    
+    const filtersContainer = document.getElementById('modalFilters');
+    if (data.filters) {
+      if (data.filters.length > 6) {
+        filtersContainer.style.display = 'block';
+        filtersContainer.innerHTML = `
+          <select class="filter-select" onchange="filterProducts('${cat}', this.value, null)">
+            <option value="all">Todas las medidas</option>
+            ${data.filters.map(f => `<option value="${f.id}">${f.label}</option>`).join('')}
+          </select>
+        `;
+      } else {
+        filtersContainer.style.display = 'flex';
+        filtersContainer.innerHTML = `<button class="filter-btn active" onclick="filterProducts('${cat}', 'all', event)">Todos</button>` + 
+          data.filters.map(f => `<button class="filter-btn" onclick="filterProducts('${cat}', '${f.id}', event)">${f.label}</button>`).join('');
+      }
+    } else {
+      filtersContainer.style.display = 'none';
+      filtersContainer.innerHTML = '';
+    }
+
+    window.currentModalCat = cat;
+    const searchContainer = document.getElementById('modalSearch');
+    if (cat === 'quimicos') {
+      searchContainer.style.display = 'block';
+      document.getElementById('modalSearchInput').value = '';
+    } else {
+      searchContainer.style.display = 'none';
+    }
+
+    renderProducts(data.products);
+    
+    document.getElementById('modalWA').href =
+      `https://wa.me/34952000000?text=${encodeURIComponent(data.wa)}`;
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+
+  // Toast System
+  function showToast(message, type = 'error') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icon = type === 'error' ? '⚠️' : '✅';
+    
+    toast.innerHTML = `
+      <div class="toast-icon">${icon}</div>
+      <div class="toast-message">${message}</div>
+    `;
+    
+    container.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add('show'), 10);
+    
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 400);
+    }, 4000);
+  }
+
+  // Form
+  function submitForm() {
+    const name = document.getElementById('fname').value;
+    const phone = document.getElementById('fphone').value;
+    const company = document.getElementById('fcompany').value;
+    const email = document.getElementById('femail').value;
+    const type = document.getElementById('ftype').value;
+    const message = document.getElementById('fmessage').value;
+
+    if (!name || !phone || !company) {
+      showToast('Por favor, complete los campos obligatorios (Nombre, Empresa y Teléfono).', 'error');
+      return;
+    }
+
+    const btn = document.querySelector('.form-submit');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Enviando...';
+    btn.disabled = true;
+
+    // Usar envío tradicional temporalmente para forzar la pantalla de activación
+    const tempForm = document.createElement('form');
+    tempForm.action = 'https://formsubmit.co/pablorodriguezperalta@gmail.com';
+    tempForm.method = 'POST';
+
+    const inputs = {
+        Nombre: name,
+        Empresa: company,
+        Telefono: phone,
+        Email: email,
+        Tipo_Negocio: type,
+        Mensaje: message,
+        _subject: 'Nuevo presupuesto de Quimiblanc'
+    };
+
+    for (const key in inputs) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = inputs[key];
+        tempForm.appendChild(input);
+    }
+    
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+  }
+</script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-header">
+    <img src="assets/logo_quimiblanc.png" alt="Quimiblanc Logo" class="cookie-logo">
+    <h3 class="cookie-title">Gestionar consentimiento</h3>
+    <button class="cookie-close" onclick="closeCookieBanner()">✕</button>
+  </div>
+  <div class="cookie-body">
+    <h4>Uso de Cookies</h4>
+    <p>Utilizamos cookies para almacenar y/o acceder a la información del dispositivo. Su consentimiento nos permitirá procesar datos como el comportamiento de navegación o las identificaciones únicas en este sitio. No consentir o retirar el consentimiento, puede afectar negativamente a algunas funciones.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-primary" onclick="acceptCookies()">Aceptar</button>
+    <button class="cookie-btn cookie-btn-secondary" onclick="denyCookies()">Denegar</button>
+  </div>
+  <div class="cookie-links">
+    <a href="politica-cookies.html">Política de cookies</a>
+    <a href="politica-privacidad.html">Política de privacidad</a>
+    <a href="aviso-legal.html">Aviso legal</a>
+  </div>
+</div>
+
+<style>
+  /* ===== COOKIE BANNER ===== */
+  .cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 16px 50px rgba(43,61,138,0.2);
+    border: 1.5px solid var(--gray-200);
+    padding: 24px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s;
+  }
+  .cookie-banner.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .cookie-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 16px;
+  }
+  .cookie-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+  }
+  .cookie-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-700);
+    flex-grow: 1;
+    text-align: center;
+  }
+  .cookie-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+  }
+  .cookie-close:hover {
+    color: var(--navy);
+  }
+  .cookie-body h4 {
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .cookie-body p {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+  .cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .cookie-btn {
+    padding: 12px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    flex: 1;
+    min-width: 130px;
+    text-align: center;
+  }
+  .cookie-btn-primary {
+    background: var(--teal);
+    color: white;
+    box-shadow: 0 4px 14px rgba(121,191,167,0.3);
+  }
+  .cookie-btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+  }
+  .cookie-btn-secondary {
+    background: var(--navy);
+    color: white;
+    box-shadow: 0 4px 14px rgba(43,61,138,0.25);
+  }
+  .cookie-btn-secondary:hover {
+    background: var(--navy-dark);
+    transform: translateY(-2px);
+  }
+  .cookie-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .cookie-links a {
+    font-size: 12px;
+    color: var(--teal-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .cookie-links a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .cookie-actions {
+      flex-direction: column;
+    }
+    .cookie-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function showCookieBanner() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => {
+        document.getElementById('cookie-banner').classList.add('show');
+      }, 1000);
+    }
+  }
+
+  function closeCookieBanner() {
+    document.getElementById('cookie-banner').classList.remove('show');
+  }
+
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    closeCookieBanner();
+  }
+
+  function denyCookies() {
+    localStorage.setItem('cookieConsent', 'denied');
+    closeCookieBanner();
+  }
+
+  document.addEventListener("DOMContentLoaded", showCookieBanner);
+</script>
+</body>
+</html>
