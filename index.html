@@ -1760,31 +1760,42 @@
     btn.innerHTML = 'Enviando...';
     btn.disabled = true;
 
-    // Usar envío tradicional temporalmente para forzar la pantalla de activación
-    const tempForm = document.createElement('form');
-    tempForm.action = 'https://formsubmit.co/pablorodriguezperalta@gmail.com';
-    tempForm.method = 'POST';
-
-    const inputs = {
-        Nombre: name,
-        Empresa: company,
-        Telefono: phone,
-        Email: email,
-        Tipo_Negocio: type,
-        Mensaje: message,
-        _subject: 'Nuevo presupuesto de Quimiblanc'
-    };
-
-    for (const key in inputs) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = inputs[key];
-        tempForm.appendChild(input);
-    }
-    
-    document.body.appendChild(tempForm);
-    tempForm.submit();
+    // Usar AJAX para que no se abra ninguna página nueva
+    fetch('https://formsubmit.co/ajax/pablorodriguezperalta@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Nombre: name,
+            Empresa: company,
+            Telefono: phone,
+            Email: email,
+            Tipo_Negocio: type,
+            Mensaje: message,
+            _subject: 'Nuevo presupuesto de Quimiblanc',
+            _captcha: 'false'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success === "true" || data.success === true) {
+            // Mostrar éxito en la web original sin salir de la página
+            const form = document.getElementById('contactForm');
+            Array.from(form.children).forEach(c => { if(c.id !== 'formSuccess') c.style.display = 'none'; });
+            document.getElementById('formSuccess').style.display = 'block';
+        } else {
+            showToast('Hubo un problema. Por favor, asegúrate de haber activado tu correo o inténtalo más tarde.', 'error');
+        }
+    })
+    .catch(error => {
+        showToast('Hubo un error de conexión al enviar el formulario. Por favor, inténtelo de nuevo más tarde.', 'error');
+    })
+    .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
   }
 </script>
 <!-- COOKIE BANNER -->
