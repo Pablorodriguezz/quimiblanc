@@ -1567,11 +1567,11 @@
 
       if (p.hasBagColors && p.img) {
         imageHtml = `
-          <img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img">
+          <img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img" loading="lazy">
           <div id="overlay-${index}" style="position:absolute; top:0; left:0; right:0; bottom:0; background-color:${bagColorHex}; mix-blend-mode: screen; pointer-events: none; transition: background-color 0.3s ease;"></div>
         `;
       } else if (p.img) {
-        imageHtml = `<img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img">`;
+        imageHtml = `<img id="img-${index}" src="${p.img}" alt="${p.name}" class="modal-product-img" loading="lazy">`;
       } else {
         imageHtml = `<span class="modal-product-icon">${p.icon}</span>`;
       }
