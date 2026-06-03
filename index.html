@@ -1237,7 +1237,7 @@
         {img:'assets/servilleta_blanca.png', name:'Servilleta 30x33 2C', type: 'servilleta', hasColors: true},
         {img:'assets/servilleta_blanca.png', name:'Servilleta 40x40 2C', type: 'servilleta', hasColors: true},
         {img:'assets/servilleta_blanca.png', name:'Servilleta 32x40', type: 'servilleta', hasColors: true},
-        {img:'assets/prod_kanguro_blanco.png', name:'Kanguro y Minikanguro', hasSizes: true, sizes: [{ label: 'Blanco', img: 'assets/prod_kanguro_blanco.png' }, { label: 'Negro', img: 'assets/prod_kanguro_negro.png' }, { label: 'Kraft', img: 'assets/prod_kanguro_kraft.png' }, { label: 'Verde', img: 'assets/prod_kanguro_verde.png' }, { label: 'Azul', img: 'assets/prod_kanguro_azul.png' }], type: 'servilleta'}
+        {img:'assets/prod_kanguro_blanco.png', name:'Kanguro y Minikanguro', hasColors: true, type: 'servilleta'}
       ],
       wa: 'Hola, me interesa información sobre sus productos de Celulosa.'
     },
@@ -1488,6 +1488,16 @@
         };
         if (colorFiles[color]) img.src = colorFiles[color];
         img.style.filter = 'none';
+      } else if (img.src.includes('kanguro')) {
+        const colorFiles = {
+          white: 'assets/prod_kanguro_blanco.png',
+          black: 'assets/prod_kanguro_negro.png',
+          kraft: 'assets/prod_kanguro_kraft.png',
+          green: 'assets/prod_kanguro_verde.png',
+          blue: 'assets/prod_kanguro_azul.png'
+        };
+        if (colorFiles[color]) img.src = colorFiles[color];
+        img.style.filter = 'none';
       } else {
         const filters = {
           white: 'none',
@@ -1565,14 +1575,25 @@
         
       let colorsHtml = '';
       if (p.hasColors) {
-        colorsHtml = `
-          <div class="product-colors">
-            <div class="color-swatch active" style="background:#f8f9fa" onclick="changeColor(${index}, 'white', event)" title="Blanco"></div>
-            <div class="color-swatch" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
-            <div class="color-swatch" style="background:#d32a2a" onclick="changeColor(${index}, 'red', event)" title="Rojo"></div>
-            <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
-            <div class="color-swatch" style="background:#2b2b2b" onclick="changeColor(${index}, 'black', event)" title="Negro"></div>
-          </div>`;
+        if (p.name.includes('Kanguro')) {
+          colorsHtml = `
+            <div class="product-colors">
+              <div class="color-swatch active" style="background:#f8f9fa" onclick="changeColor(${index}, 'white', event)" title="Blanco"></div>
+              <div class="color-swatch" style="background:#2b2b2b" onclick="changeColor(${index}, 'black', event)" title="Negro"></div>
+              <div class="color-swatch" style="background:#c19a6b" onclick="changeColor(${index}, 'kraft', event)" title="Kraft"></div>
+              <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
+              <div class="color-swatch" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+            </div>`;
+        } else {
+          colorsHtml = `
+            <div class="product-colors">
+              <div class="color-swatch active" style="background:#f8f9fa" onclick="changeColor(${index}, 'white', event)" title="Blanco"></div>
+              <div class="color-swatch" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+              <div class="color-swatch" style="background:#d32a2a" onclick="changeColor(${index}, 'red', event)" title="Rojo"></div>
+              <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
+              <div class="color-swatch" style="background:#2b2b2b" onclick="changeColor(${index}, 'black', event)" title="Negro"></div>
+            </div>`;
+        }
       } else if (p.hasBagColors) {
         colorsHtml = `
           <div class="product-colors">
