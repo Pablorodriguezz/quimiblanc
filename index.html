@@ -1244,13 +1244,7 @@
     utiles: {
       title: 'Útiles de Limpieza',
       products: [
-        {img:'assets/prod_bayeta_azul.png', name:'Bayeta Microfibra', hasSizes: true, sizes: [
-          { label: 'Azul', img: 'assets/prod_bayeta_azul.png' }, 
-          { label: 'Roja', img: 'assets/prod_bayeta_roja_1778931637246.png' }, 
-          { label: 'Verde', img: 'assets/prod_bayeta_verde_1778931650426.png' }, 
-          { label: 'Amarilla', img: 'assets/prod_bayeta_amarilla_1778931662931.png' }, 
-          { label: 'Gris', img: 'assets/prod_bayeta_gris_1778931675824.png' }
-        ]},
+        {img:'assets/prod_bayeta_azul.png', name:'Bayeta Microfibra', hasColors: true},
         {img:'assets/prod_cepillo_azul.png', name:'Cepillo de Barrer Curva Básica', hasSizes: true, sizes: [
           { label: 'Azul', img: 'assets/prod_cepillo_azul.png' }, 
           { label: 'Rojo', img: 'assets/prod_cepillo_rojo_1778931687551.png' }
@@ -1498,6 +1492,16 @@
         };
         if (colorFiles[color]) img.src = colorFiles[color];
         img.style.filter = 'none';
+      } else if (img.src.includes('bayeta')) {
+        const colorFiles = {
+          blue: 'assets/prod_bayeta_azul.png',
+          red: 'assets/prod_bayeta_roja_1778931637246.png',
+          green: 'assets/prod_bayeta_verde_1778931650426.png',
+          yellow: 'assets/prod_bayeta_amarilla_1778931662931.png',
+          gray: 'assets/prod_bayeta_gris_1778931675824.png'
+        };
+        if (colorFiles[color]) img.src = colorFiles[color];
+        img.style.filter = 'none';
       } else {
         const filters = {
           white: 'none',
@@ -1583,6 +1587,15 @@
               <div class="color-swatch" style="background:#c19a6b" onclick="changeColor(${index}, 'kraft', event)" title="Kraft"></div>
               <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
               <div class="color-swatch" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+            </div>`;
+        } else if (p.name.includes('Bayeta')) {
+          colorsHtml = `
+            <div class="product-colors">
+              <div class="color-swatch active" style="background:#2a75d3" onclick="changeColor(${index}, 'blue', event)" title="Azul"></div>
+              <div class="color-swatch" style="background:#d32a2a" onclick="changeColor(${index}, 'red', event)" title="Rojo"></div>
+              <div class="color-swatch" style="background:#2ad366" onclick="changeColor(${index}, 'green', event)" title="Verde"></div>
+              <div class="color-swatch" style="background:#f1c40f" onclick="changeColor(${index}, 'yellow', event)" title="Amarilla"></div>
+              <div class="color-swatch" style="background:#808080" onclick="changeColor(${index}, 'gray', event)" title="Gris"></div>
             </div>`;
         } else {
           colorsHtml = `
