@@ -1713,12 +1713,8 @@
 
     window.currentModalCat = cat;
     const searchContainer = document.getElementById('modalSearch');
-    if (cat === 'quimicos') {
-      searchContainer.style.display = 'block';
-      document.getElementById('modalSearchInput').value = '';
-    } else {
-      searchContainer.style.display = 'none';
-    }
+    searchContainer.style.display = 'block';
+    document.getElementById('modalSearchInput').value = '';
 
     renderProducts(data.products);
     
