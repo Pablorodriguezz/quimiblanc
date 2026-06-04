@@ -1715,7 +1715,23 @@
     window.currentModalCat = cat;
     const searchContainer = document.getElementById('modalSearch');
     searchContainer.style.display = 'block';
-    document.getElementById('modalSearchInput').value = '';
+    
+    const searchInput = document.getElementById('modalSearchInput');
+    searchInput.value = '';
+    
+    if (['dispensadores', 'uniformes', 'menaje', 'maquinaria', 'mobiliario'].includes(cat)) {
+      searchInput.placeholder = 'Buscar catálogo...';
+    } else if (cat === 'celulosa') {
+      searchInput.placeholder = 'Buscar producto (ej. Servilleta)...';
+    } else if (cat === 'utiles') {
+      searchInput.placeholder = 'Buscar producto (ej. Fregona)...';
+    } else if (cat === 'bolsas') {
+      searchInput.placeholder = 'Buscar producto (ej. Bolsa)...';
+    } else if (cat === 'un_solo_uso') {
+      searchInput.placeholder = 'Buscar producto (ej. Envase)...';
+    } else {
+      searchInput.placeholder = 'Buscar producto (ej. Desengrasante)...';
+    }
 
     renderProducts(data.products);
     
