@@ -298,6 +298,8 @@
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1.5px solid var(--gray-200);
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
   .cat-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 24px 60px rgba(43,61,138,0.18); border-color: var(--teal-light); }
 
@@ -306,6 +308,7 @@
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
+    flex-shrink: 0;
   }
   .cat-card-img-accent {
     position: absolute; width: 140px; height: 140px;
@@ -317,10 +320,16 @@
     font-size: 52px; z-index: 1; position: relative;
     filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
   }
-  .cat-card-body { padding: 22px 24px 20px; }
+  .cat-card-body { 
+    padding: 22px 24px 20px; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
   .cat-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-  .cat-card-desc { font-size: 13px; color: var(--gray-500); line-height: 1.5; margin-bottom: 16px; }
+  .cat-card-desc { font-size: 13px; color: var(--gray-500); line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
   .cat-card-btn {
+    align-self: flex-start;
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600; color: var(--teal-dark);
     background: rgba(121,191,167,0.1); padding: 8px 16px; border-radius: 50px;
