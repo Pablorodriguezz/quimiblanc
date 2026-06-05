@@ -1644,7 +1644,7 @@
       let sizesHtml = '';
       if (p.hasSizes && p.sizes) {
         sizesHtml = `
-          <div class="product-sizes" style="display:flex; gap:8px; margin-top:12px; justify-content:center;">
+          <div class="product-sizes" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; justify-content:center;">
             ${p.sizes.map((s, i) => `
               <button class="size-btn ${i===0?'active':''}" 
                       style="padding:6px 10px; font-size:12px; border:1px solid var(--gray-200); background:${i===0?'var(--navy)':'#f8f9fa'}; color:${i===0?'white':'var(--navy)'}; border-radius:6px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s;"
